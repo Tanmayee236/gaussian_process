@@ -49,14 +49,13 @@ class ElevatorLoader:
     @logger.catch(reraise=True)
     def load_data(self, train_x, train_y, test_x, test_y, batch_size=1024):
 
-
         train_dataset = TensorDataset(train_x, train_y)
-        train_loader = DataLoader(train_dataset, batch_size, shuffle=True)
+        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         
         
         test_dataset = TensorDataset(test_x, test_y)
-        test_loader = DataLoader(test_dataset, batch_size=1024)
-        return train_loader, test_loader, train_x.shape
+        test_loader = DataLoader(test_dataset, batch_size=batch_size)
+        return train_loader, test_loader, train_x.shape 
 
     def get_data(self):
         X, y = self.params()

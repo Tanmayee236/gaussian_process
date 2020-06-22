@@ -7,7 +7,6 @@ import pandas as pd
 import pytest
 import ta
 from loguru import logger
-from pandas.api.types import is_datetime64_any_dtype as is_datetime
 
 from darwin_ml import __version__
 from darwin_ml.technical import (fibonacci, fibonacci_rsi,
@@ -55,6 +54,7 @@ def roll_dataframe_stats(frame: pd.DataFrame,
     while windower.has_next_observation:
         res = windower.step()
         x = res.to_dict(orient="record")[0]
+        
         y = x.pop("y")
         if model_copy is not None:
             y_pred = boolean_flip(model.predict_one(x))
@@ -111,7 +111,6 @@ def main():
     report = metrics.ClassificationReport()
 
     roll_dataframe_stats(df, model=model, metric=report)
-    # print(df[['y']].tail(20))
 
 
 if __name__ == "__main__":

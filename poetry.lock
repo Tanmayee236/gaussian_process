@@ -1034,6 +1034,18 @@ pytz = "*"
 
 [[package]]
 category = "main"
+description = "Technical Analysis Library in Python"
+name = "ta"
+optional = false
+python-versions = "*"
+version = "0.5.25"
+
+[package.dependencies]
+numpy = "*"
+pandas = "*"
+
+[[package]]
+category = "main"
 description = "threadpoolctl"
 name = "threadpoolctl"
 optional = false
@@ -1238,7 +1250,7 @@ test = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 
 [metadata]
-content-hash = "543ace585853e24fa43e72efa6ab25d9e94597cd80c1759cd078f77e440cfadf"
+content-hash = "f5519f92a631d9bec0824af14f91fb37fecb00d16119dd481649c958267c3b27"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -1906,6 +1918,9 @@ smmap = [
 ]
 snaptime = [
     {file = "snaptime-0.2.4.tar.gz", hash = "sha256:e3f1eb89043d58d30721ab98cb65023f1a4c2740e3b197704298b163c92d508b"},
+]
+ta = [
+    {file = "ta-0.5.25.tar.gz", hash = "sha256:cb0cc7d52d039afa084bf32d439e00183bde47e513801a44402611b57643a0c8"},
 ]
 threadpoolctl = [
     {file = "threadpoolctl-2.1.0-py3-none-any.whl", hash = "sha256:38b74ca20ff3bb42caca8b00055111d74159ee95c4370882bbff2b93d24da725"},

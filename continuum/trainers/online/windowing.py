@@ -5,13 +5,13 @@ import creme
 import numpy as np
 import pandas as pd
 from creme.base.estimator import Estimator
-from creme.stream import iter_pandas
-from loguru import logger
-from creme import metrics
+
+
 
 class Windowing:
     """Roll through a dataframe manually
     """
+
     def __init__(
         self,
         frame: pd.DataFrame,
@@ -103,9 +103,5 @@ class Windowing:
         self._current_step = 0
 
 
-
-
 if __name__ == "__main__":
     print("Hello World")
-
-
